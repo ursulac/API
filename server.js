@@ -60,6 +60,7 @@ app.post('/private/mailgun', bodyParser.json(), bodyParser.urlencoded({ extended
 		subscribed: true,
 		address: email
 	};
+	console.log('test');
 	// recaptcha data
 	const recaptchaURL = `https://www.google.com/recaptcha/api/siteverify?secret=${config.captchaSecret}&response=${req.body.recaptcha}`;
 	const recaptchaResponse = await axios.get(recaptchaURL);
